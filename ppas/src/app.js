@@ -6,6 +6,11 @@ const ejsLayout = require('express-ejs-layouts')
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/resources', express.static(__dirname + 'public/resources'))
+// app.use(express.static(__dirname + '../public/css'));
 require("./config/passport")(passport)
 // mongoose
 mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})

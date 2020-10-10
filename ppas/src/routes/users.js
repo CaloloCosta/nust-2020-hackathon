@@ -21,8 +21,18 @@ router.get('/login', (req, res, next) =>{
 // post register
 router.post('/register', (req, res, next) =>{
     let errors = []
-    const {username} = req.body
-    if(!username){
+    console.log(req.body)
+    // {
+    //     username: '123',
+    //     fullname: 'wwww',
+    //     citizenship: 'South Africa',
+    //     skillset: 'aaa aaa aaa',
+    //     qualification: 'Qualification 2',
+    //     interest: 'aaa eee ',
+    //     motivation: 'aaaaa' }
+      
+    const {username,fullname,citizenship,skillset,qualification,interest,motivation} = req.body
+    if(!username || !fullname || !citizenship || !skillset || !qualification || !interest || !motivation){
         errors.push({msg: "Please fill in all fields"})
     }
 
@@ -44,7 +54,14 @@ router.post('/register', (req, res, next) =>{
             else {
                 const newUser = new User({
                     username: username,
-                    password: '123'
+                    fullname: fullname,
+                    citizenship: citizenship,
+                    skillset: skillset.split(" "),
+                    qualification: qualification,
+                    interest: interest.split(" "),
+                    motivation:motivation,
+                    password: 'nust123',
+                    userType: 1
                 })
                 bcrypt.genSalt(10, (err,salt) =>
                 bcrypt.hash(newUser.password,salt,(err,hash) =>{
@@ -54,7 +71,8 @@ router.post('/register', (req, res, next) =>{
                         console.log(value)
                         req.flash('success_msg','You are now registere!')
                         res.redirect('/users/login')
-                    }).catch(valeu => console.log(value))
+                    })
+                    .catch(value=> console.log(value));
                 }))
 
             }
@@ -65,6 +83,8 @@ router.post('/register', (req, res, next) =>{
 
 // get logout
 router.get('/logout', (req, res) =>{
-    
+    req.logout();
+    req.flash('success_msg','Now logged out');
+    res.redirect('/users/login');
 })
 module.exports = router

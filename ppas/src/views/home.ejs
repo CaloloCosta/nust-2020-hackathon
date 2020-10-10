@@ -1,4 +1,4 @@
-<h1>Views Testing...</h1>
+<!-- <h1>Views Testing...</h1>
 <h2>REgister</h2>
 <%- include ('./partials/messages') %>
 <form action="/users/register" method="POST">
@@ -12,3 +12,153 @@
     <input type="password" name="password" placeholder="password">
     <input type="submit" name="" id="">
 </form>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <img src="../resources/classRoom.png" class="background" alt="logo">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="pps-primary-heading">FCI Postgraduate Programme Application System</h1>
+                <p class="text">
+                    <span class="pps-subheading">The FCI PPAS improves the processing of the whole cycle
+                        of application for the thesis,the proposal of a topic and examination of the students.</span>
+                </p>
+
+                <a href="#" class="btn btn-apply">Apply Now</a>
+            </div>
+
+            <div class="col-6 right-div">
+                <div class="topnav">
+                    <a href="#app">apply</a>
+                    <a href="#">login</a>
+                </div>
+                <!-- Material form login -->
+                <div class="card" id="card">
+                    <!--Card content-->
+                    <div class="card-body px-lg-2 pt-0">
+
+                            <!-- <form action="/users/login" method="POST">
+                                <input type="text" name="username" placeholder="student number">
+                                <input type="password" name="password" placeholder="password">
+                                <input type="submit" name="" id="">
+                            </form> -->
+
+                        <!-- Form -->
+                        <form action="/users/login" method="POST" class="text-center" style="color: #757575;" action="#!">
+
+                            <!-- Email -->
+                            <div class="md-form">
+                                <input type="text" name="username" id="input" class="form-control" placeholder="Username">
+                            </div>
+
+                            <!-- Password -->
+                            <div class="md-form">
+                                <input type="password" name="password" id="input" class="form-control" placeholder="Password">
+                            </div>
+
+                            <!-- Sign in button -->
+                            <button id="button"
+                                class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                type="submit">Sign in</button>
+
+                        </form>
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+                <!-- Material form login -->
+
+            </div>
+
+        </div>
+
+        <div class="row app" id="app">
+            <div class="col">
+                <h1 class="pps-primary-heading">Application Stage</h1>
+                <%- include ('./partials/messages') %>
+                <form action="/users/register" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Student Number</label>
+                            <input name="username" type="text" class="form-control" id="inputEmail4"
+                                placeholder="Student Number">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Full Name</label>
+                            <input name="fullname" type="text" class="form-control" id="inputPassword4"
+                                placeholder="Ful Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Citizenship</label>
+                            <select name="citizenship" id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                                <option>Angola</option>
+                                <option>South Africa</option>
+                                <option>Namibia</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Skill Set</label>
+                            <input type="text" name="skillset" class="form-control" id="inputPassword4"
+                                placeholder="Skill Set">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Qualification</label>
+                            <select name="qualification" id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                                <option>Qualifiation 1</option>
+                                <option>Qualification 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Interests</label>
+                            <input name="interest" type="text" class="form-control" id="inputPassword4"
+                                placeholder="Interests">
+                        </div>
+                    </div>
+                    <div class="from-row">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Motivation</label>
+                            <textarea name="motivation" class="form-control" id="exampleFormControlTextarea1"
+                                rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

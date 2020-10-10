@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.background{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 870px;    
+}
+
+
+.row{
+    padding-top: 10px;
+    line-height: 1.7;
+    
+}
+
+.col{
+    padding-top: 90px;
+}
+
+
+.pps-primary-heading{
+    color: #5E46C4;
+    letter-spacing: 3px;
+    font-weight: 650;
+    margin-bottom: 30px;
+}
+
+.pps-subheading{
+    letter-spacing: 1px;
+    font-weight: 460;
+    font-size: 24px;
+    color: #424242;
+     
+}
+
+.text{
+margin-bottom: 50px;
+}
+
+.btn{
+  font-weight: 600;
+}
+
+.btn:link, .btn:visited{
+
+text-decoration: none;
+text-transform: capitalize;
+padding: 10px 30px;
+display: inline-block;
+text-align: center;
+border-radius: 30px;
+transition: all 1s;
+}
+
+.btn-apply{
+background-color: #5E46C4;
+color: #FFFFFF;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0,.4);
+}
+
+.btn:active{
+  transform: translateY(-1px);
+}
+
+
+
+@keyframes moveinButton{
+
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  80%{
+    transform: translateX(-20px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+
+.topnav{
+    margin-right: -60px;
+    text-align: center;
+}
+.topnav a{
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 2px solid white;
+  margin: 10px;
+}

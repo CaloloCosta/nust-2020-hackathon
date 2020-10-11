@@ -3,6 +3,10 @@ const router = express.Router()
 const User = require("../models/user.js")
 const bcrypt = require('bcrypt')
 const passport = require('passport')
+
+
+
+
 // post login
 router.post('/login', (req, res, next) =>{
     console.log(req.body)
@@ -22,14 +26,6 @@ router.get('/login', (req, res, next) =>{
 router.post('/register', (req, res, next) =>{
     let errors = []
     console.log(req.body)
-    // {
-    //     username: '123',
-    //     fullname: 'wwww',
-    //     citizenship: 'South Africa',
-    //     skillset: 'aaa aaa aaa',
-    //     qualification: 'Qualification 2',
-    //     interest: 'aaa eee ',
-    //     motivation: 'aaaaa' }
       
     const {username,fullname,citizenship,skillset,qualification,interest,motivation} = req.body
     if(!username || !fullname || !citizenship || !skillset || !qualification || !interest || !motivation){
@@ -56,12 +52,13 @@ router.post('/register', (req, res, next) =>{
                     username: username,
                     fullname: fullname,
                     citizenship: citizenship,
-                    skillset: skillset.split(" "),
+                    // skillset: skillset.split(" "),
                     qualification: qualification,
-                    interest: interest.split(" "),
-                    motivation:motivation,
+                    // interest: interest.split(" "),
+                    // motivation:motivation,
                     password: 'nust123',
-                    userType: 1
+                    userType: 5,
+                    // status: 'Please upload your proposal'
                 })
                 bcrypt.genSalt(10, (err,salt) =>
                 bcrypt.hash(newUser.password,salt,(err,hash) =>{
@@ -80,6 +77,35 @@ router.post('/register', (req, res, next) =>{
     }
     
 })
+
+
+
+
+
+// var storage =   multer.diskStorage({
+//   destination: function (req, file, callback) {
+//     callback(null, './files');
+//   },
+//   filename: function (req, file, callback) {
+//     callback(null, file.fieldname + '-' + Date.now());
+//   }
+// });
+// var upload = multer({ storage : storage}).single('document');
+
+// // app.get('/',function(req,res){
+// //       res.sendFile(__dirname + "/index.html");
+// // });
+
+// router.post('/upload',function(req,res){
+//     console.log(req.body)
+//     upload(req,res,function(err) {
+//         if(err) {
+//             return res.end("Error uploading file.");
+//         }
+//         res.end("File is uploaded");
+//     });
+// });
+
 
 // get logout
 router.get('/logout', (req, res) =>{

@@ -35,8 +35,15 @@ skillset:{
 interest:{
   type: [String],
   required: false
+},
+status:{
+  type: String,
+  required: false
 }
 });
 const User= mongoose.model('User',UserSchema);
+
+
+
 
 module.exports = User;

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="calculationS.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <img src="img/elipse.png" class="background" alt="logo">
+
+    <img src="img/elipse-conor.png" class="bgconor" alt="logo">
+
+        <div class="text">
+            <h1 class="content">
+                <span class="sub-heading">Are you a prospective Nust student?</span>
+                <span class="other-heading">Join the best university of Namibia</span>
+                <span class="main-heading">Fill in the form, calculate your points.</span>
+            </h1>
+        </div>
+
+        <div id="results" class="container" style="display: none;">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-8 card">
+                    <h5 class="card-header"style="background-color:white; color:#55A2A9; text-align:center;">Our Feedback to you</h5>
+                    <div class="card-body">
+                      <h5 class="card-title mb-8" style="color:#55A2A9;">Admission status:</h5>
+                        <p id="main"></p>
+                        <p id="obj1"></p>
+                        <p id="com1"></p>
+                        <p id="obj2"></p>
+                        <p id="com2"></p>
+                        
+                      
+
+                      <p class="card-text mb-6">
+
+
+
+                      </p>
+                      <a href="CalculationS.html" class="btn btn-primary"style="font-weight:400;outline:none; letter-spacing:1px;">Recalculate</a>
+                    </div>
+                  </div> 
+            </div>
+            
+
+        </div>
+        <div id="form" class="container">
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+
+                    <h1 class="form-title" style="color:#55A2A9; text-align:center;">Nust Point Calculation System</h1>
+
+                    <form class="needs-validation" novalidate>
+                        
+                    <div class="form-row">    
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom01"><span style="color:#55A2A9; font-weight: 500;">Personal Details:</span></label>
+                                <input type="text" class=" student-name form-control" id="validationCustom01 " placeholder="First name" required> 
+                                <div class="invalid-feedback">
+                                    Please select a valid name.
+                                </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom04"><span style="color:white">.</span></label>
+                            <select class="gender form-control" id="validationCustom04" required>
+                                <option selected disabled value="">Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>                                    
+                            </select>
+
+                            <div class="invalid-feedback">
+                                Please select a valid field of study.
+                            </div>  
+                        </div>
+
+                    </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                
+                                <label for="validationCustom03"><span style="color:#55A2A9; font-weight: 500;">Fields of Study:</span></label>
+                                <select class="field-option1 custom-select" id="validationCustom03" required>
+                                    <option selected disabled value="">Option 1</option>
+                                    <option>Engineering</option>
+                                    <option>Human Sciences</option>
+                                    <option>Management Sciences</option>
+                                    <option>Computing and Informatics</option>
+                                    <option>Health and Applied Sciences</option>
+                                    <option>Natural Resources and Spatial Sciences</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid field of study.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom04"><span style="color:white">.</span></label>
+                                <select class="field-option2 custom-select" id="validationCustom04" required>
+                                    <option selected disabled value="">Option 2</option>
+                                    <option>Human Sciences</option>
+                                    <option>Management Sciences</option>
+                                    <option>Computing and Informatics</option>
+                                    <option>Health and Applied Sciences</option>
+                                    <option>Natural Resources and Spatial Sciences</option>                                    
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    Please select a valid field of study.
+                                </div>  
+                            </div>
+                        </div>
+
+                 <label for="validationCustom04"><span style="color:#55A2A9; font-weight: 500;">Grade 12 Subjects:</span></label>
+
+
+                        <div class="form-row">
+                    
+                            <div class="col mb-2">
+                                <input type="text" id = "english-subject"class="form-control" value="English" required disabled>
+                            </div>
+                            <div class="col">
+                                <input type="text" id = "english-symbol" class="form-control" placeholder="Ordinary or Higher level symbol "required required pattern="[1-4]|[a-u]|u|U|a+|A+">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col mb-2">
+                                <input type="text" id = "math-subject" class="form-control" disabled value="Mathematics" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" id = "math-symbol" class="form-control" placeholder="Ordinary or Higher level symbol"required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col  mb-2">
+                                <input type="text" id = "subject-3" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="col  mb-2">
+                                <input type="text"  id = "subject-3-symbol"class="form-control" placeholder="Ordinary or Higher level symbol"required>
+                            </div>
+                        </div> 
+
+                        <div class="form-row">
+                            <div class="col  mb-2">
+                                <input type="text" id = "subject-4"class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="col  mb-2">
+                                <input type="text" id = "subject-4-symbol"class="form-control" placeholder="Ordinary or Higher level symbol"required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col  mb-2">
+                                <input id = "subject-5"type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            
+                            <div class="col  mb-2">
+                                <input type="text" id = "subject-5-symbol"class="form-control" placeholder="Ordinary or Higher level symbol"required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                        <div class="col  mb-2">
+                            <input type="text" id = "subject-6" class="form-control" placeholder="Subject"required>
+                        </div>
+                                                
+                        <div class="col  mb-4">
+                        <input type="text" class="form-control" id = "subject-6-symbol"placeholder="Ordinary or Higher level symbol"required>
+                        </div>
+                        </div>
+
+                        <a href="#" class="btn btn-calculate" id = "btn-calculating">Calculate</a>
+
+                        
+                    </form>
+                    
+                    <script>
+                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                        (function () {
+                            'use strict';
+                            window.addEventListener('load', function () {
+                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                var forms = document.getElementsByClassName('needs-validation');
+                                // Loop over them and prevent submission
+                                var validation = Array.prototype.filter.call(forms, function (form) {
+                                    form.addEventListener('submit', function (event) {
+                  
